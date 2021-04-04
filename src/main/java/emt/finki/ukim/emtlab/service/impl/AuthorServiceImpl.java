@@ -5,6 +5,7 @@ import emt.finki.ukim.emtlab.repository.AuthorRepository;
 import emt.finki.ukim.emtlab.service.AuthorService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,5 +20,10 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public Optional<Author> findById(Long id) {
         return this.authorRepository.findById(id);
+    }
+
+    @Override
+    public List<Author> showAllAuthors() {
+        return this.authorRepository.findAll();
     }
 }
